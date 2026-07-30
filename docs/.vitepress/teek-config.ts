@@ -1,9 +1,3 @@
-/**
- * 这是一个 Teek 配置文件模板，涵盖 Teek 95% 的配置项，更多配置项示例请看 https://vp.teek.top/reference/config.html 专题
- *
- * 该文件并没有被外部任何文件引用，您可以参考这个里面的配置项，按需提取放到 teekConfig.ts 文件里并进行更改
- */
-
 // 本地 Teek 主题包引用（与 Teek 在线主题包引用 二选一）
 import { defineTeekConfig } from "../../packages/config";
 import { version } from "../../packages/teek/version";
@@ -18,6 +12,7 @@ export const teekConfig = defineTeekConfig({
   vpHome: true, // 是否启用 VitePress 首页风格，支持 teekHome 和 vpHome 同时存在
   loading: false, // 页面加载 Loading 动画配置，如果为 boolean，则控制是否启用，如果为字符串，则指定加载 Loading 动画的文案
   homeCardListPosition: "left", // 首页卡片栏列表位置，当为 left 则在文章列表左侧，当为 right 则在文章列表右侧
+  sidebarTrigger: true, // 是否启用侧边栏展开/折叠触发器，点击触发器可以展开/折叠侧边栏。
   anchorScroll: true, // 是否启用锚点滚动功能，即阅读文章时，自动将 h1 ~ h6 标题添加到地址栏 # 后面
   // 深色、浅色模式切换时是否开启过渡动画
   viewTransition: {
@@ -27,7 +22,6 @@ export const teekConfig = defineTeekConfig({
     easing: "ease-in", // 缓动函数
   },
   themeSize: "large", // 站点尺寸，默认为 medium
-  sidebarTrigger: true, // 是否启用侧边栏展开/折叠触发器，点击触发器可以展开/折叠侧边栏。
   // 右下角回到顶部配置
   backTop: {
     enabled: true, // 是否启动回到顶部功能
@@ -76,7 +70,7 @@ export const teekConfig = defineTeekConfig({
     // 布局主题色配置
     themeColor: {
       disabled: false, // 禁用布局主题色切换
-      defaultColorName: "tk-success", // 布局默认主题色
+      defaultColorName: "vp-primary", // 布局默认主题色
       defaultSpread: false, // 是否将主题色扩散到其他元素（根据主题色计算其他元素需要的颜色）
       disableHelp: false, // 禁用帮助提示
       disabledInMobile: false, // 是否在移动端禁用
@@ -85,7 +79,7 @@ export const teekConfig = defineTeekConfig({
           label: "扩展主题色板",
           tip: "扩展主题色板",
           options: [
-            // --- 活力与明亮系 ---
+            // --- 活力与明亮系 --
             { label: "紫罗兰", value: "violet", color: "#7166f0" }, // 经典优雅，视觉舒适
             { label: "珊瑚粉", value: "coral-pink", color: "#ff6b6b" }, // 温暖活泼，亲和力强
             { label: "天蓝", value: "sky-blue", color: "#00bbf9" }, // 清新开阔，科技感初显
@@ -128,10 +122,7 @@ export const teekConfig = defineTeekConfig({
     },
   },
   // 文章默认的作者信息
-  author: {
-    name: "Fqzlr", // 作者名称
-    link: "https://github.com/fqzlr", // 点击作者名称后跳转的链接
-  },
+  author: { name: "Fqzlr", link: "https://github.com/fqzlr" },
   // 公告配置
   notice: {
     enabled: true, // 是否启用公告功能
@@ -140,7 +131,7 @@ export const teekConfig = defineTeekConfig({
     duration: 0, // 弹框定时自动关闭，0 不自动消失
     mobileMinify: false, // 移动端自动最小化
     reopen: true,
-    useStorage: true, // 是否使用 localStorage 存储公告状态，如：当打开公告弹框后，下次进来则自动打开弹框
+    useStorage: true, // 是是否使用 localStorage 存储公告状态，如：当打开公告弹框后，下次进来则自动打开弹框
     twinkle: false, // 公告图标是否打开闪烁提示
     position: "top", // 公告弹框出现位置
     // ...
@@ -151,10 +142,7 @@ export const teekConfig = defineTeekConfig({
     { provider: "baidu", options: { id: "******" } },
     {
       provider: "umami",
-      options: {
-        id: "4f4d87b0-bf0f-403a-a7c1-71962537673a",
-        src: "https://umami.fqzlr.com/script.js",
-      },
+      options: { id: "4f4d87b0-bf0f-403a-a7c1-71962537673a", src: "https://umami.fqzlr.com/script.js" },
     },
   ],
   // 首页 Banner 配置，位于首页顶部
@@ -189,9 +177,9 @@ export const teekConfig = defineTeekConfig({
   },
   // 壁纸模式，在首页 最顶部 进入全屏后开启，仅当 banner.bgStyle = 'fullImg' 或 bodyBgImg.imgSrc 存在才生效。
   wallpaper: {
-    enabled: true, // 是否启用壁纸模式
-    hideBanner: true, // 开启壁纸模式后，是否隐藏 Banner
-    hideMask: true, // 开启壁纸模式后，是否隐藏 Banner 或 bodyBgImage 的遮罩层，需确保 banner.mask 和 bodyBgImage.mask 为 true 才生效
+    enabled: false, // 是否启用壁纸模式
+    hideBanner: false, // 开启壁纸模式后，是否隐藏 Banner
+    hideMask: true, // 开启壁纸模式后，是否隐藏 Banner 或 bodyBgImage 的遮罩层，则确保 banner.mask 和 bodyBgImage.mask 为 true 才生效
   },
   // 文章配置
   post: {
@@ -281,6 +269,86 @@ export const teekConfig = defineTeekConfig({
     limit: 21, // 一页显示的数量
     autoPage: false, // 是否自动翻页
     pageSpeed: 4000, // 翻页间隔时间，单位：毫秒。autoPage 为 true 时生效
+  },
+  // 站点信息卡片配置
+  docAnalysis: {
+    enabled: true, // 是否启用站点信息卡片
+    createTime: "2025-03-23", // 站点创建时间
+    wordCount: true, // 是否开启文章页的字数统计
+    readingTime: true, // 是否开启文章页的阅读时长统计
+    // 访问量、访客数统计配置
+    statistics: {
+      provider: "busuanzi", // 网站流量统计提供商
+      siteView: true, // 是否开启首页的访问量和排名统计
+      pageView: true, // 是否开启文章页的浏览量统计
+      tryRequest: false, // 如果请求网站流量统计接口失败，是否重试
+      tryCount: 5, // 重试次数，仅当 tryRequest 为 true 时有效
+      tryIterationTime: 2000, // 重试间隔时间，单位：毫秒，仅当 tryRequest 为 true 时有效
+      permalink: true, // 是否只统计永久链接的浏览量，如果为 false，则统计 VitePress 默认的文档目录链接
+    },
+    // 自定义现有信息
+    overrideInfo: [
+      {
+        key: "lastActiveTime",
+        label: "活跃时间",
+        value: (_, currentValue) => (currentValue + "").replace("前", ""),
+        show: true,
+      },
+    ],
+    // 自定义额外信息
+    appendInfo: [{ key: "index", label: "站点作者", value: "Fqzlr" }],
+  },
+  articleAnalyze: {
+    showIcon: true, // 作者、日期、分类、标签、字数、阅读时长、浏览量等文章信息的图标是否显示
+    dateFormat: "yyyy-MM-dd hh:mm:ss", // 文章日期格式，首页和文章页解析日期时使用
+    dateUTC: true, // 是否使用 UTC 时间
+    showInfo: true, // 是否展示作者、日期、分类、标签、字数、阅读时长、浏览量等文章信息，分别作用于首页和文章页
+    showAuthor: true, // 是否展示作者
+    showCreateDate: true, // 是否展示创建日期
+    showUpdateDate: false, // 是否展示更新日期，仅在文章页显示
+    showCategory: false, // 是否展示分类
+    showTag: false, // 是否展示标签
+  },
+  // 面包屑配置
+  breadcrumb: {
+    enabled: true, // 是否启用面包屑
+    showCurrentName: false, // 面包屑最后一列是否显示当前文章的文件名
+    separator: "/", // 面包屑分隔符
+    homeLabel: "首页", // 鼠标悬停首页图标的提示文案
+  },
+  // 文章页的样式风格，default 为 VitePress 原生风格，card 为单卡片风格，segment 为片段卡片风格，card-nav 和 segment-nav 会额外修改导航栏样式。
+  pageStyle: "default",
+  // 赞赏功能配置
+  appreciation: {
+    position: "doc-after", // 赞赏位置
+    // 赞赏配置
+    options: {
+      icon: "weChatPay", // 赞赏图标，内置 weChatPay 和 alipay
+      expandTitle: "打赏支持", // 展开标题，支持 HTML
+      collapseTitle: "下次一定", // 折叠标题，支持 HTML
+      content: `<img src='/teek-logo-large.png'>`, // 赞赏内容，支持 HTML
+      expand: false, // 是否默认展开，默认 false
+    },
+  },
+  // 文章分享配置
+  articleShare: {
+    enabled: true, // 是否开启文章链接分享功能
+    text: "分享此页面", // 分享按钮文本
+    copiedText: "链接已复制", // 复制成功文本
+    query: false, // 是否包含查询参数
+    hash: false, // 是否包含哈希值
+  },
+  articleBanner: {
+    enabled: true, // 是否启用单文章页 Banner
+    showCategory: true, // 是否展示分类
+    showTag: true, // 是否展示标签
+    defaultCoverImg: "", // 默认封面图
+    defaultCoverBgColor: "", // 默认封面背景色，优先级低于 defaultCoverImg
+  },
+  // 文章页底部的最近更新栏配置
+  articleUpdate: {
+    enabled: true, // 是否启用文章最近更新栏
+    limit: 3, // 文章最近更新栏显示数量
   },
   // 友情链接卡片配置
   friendLink: {
@@ -601,34 +669,6 @@ export const teekConfig = defineTeekConfig({
     autoPage: false, // 是否自动翻页
     pageSpeed: 4000, // 翻页间隔时间，单位：毫秒。autoPage 为 true 时生效
   },
-  // 站点信息卡片配置
-  docAnalysis: {
-    enabled: true, // 是否启用站点信息卡片
-    createTime: "2025-03-23", // 站点创建时间
-    wordCount: true, // 是否开启文章页的字数统计
-    readingTime: true, // 是否开启文章页的阅读时长统计
-    // 访问量、访客数统计配置
-    statistics: {
-      provider: "busuanzi", // 网站流量统计提供商
-      siteView: true, // 是否开启首页的访问量和排名统计
-      pageView: true, // 是否开启文章页的浏览量统计
-      tryRequest: false, // 如果请求网站流量统计接口失败，是否重试
-      tryCount: 5, // 重试次数，仅当 tryRequest 为 true 时有效
-      tryIterationTime: 2000, // 重试间隔时间，单位：毫秒，仅当 tryRequest 为 true 时有效
-      permalink: true, // 是否只统计永久链接的浏览量，如果为 false，则统计 VitePress 默认的文档目录链接
-    },
-    // 自定义现有信息
-    overrideInfo: [
-      {
-        key: "lastActiveTime",
-        label: "活跃时间",
-        value: (_, currentValue) => (currentValue + "").replace("前", ""),
-        show: true,
-      },
-    ],
-    // 自定义额外信息
-    appendInfo: [{ key: "index", label: "站点作者", value: "Teeker" }],
-  },
   // 社交信息配置，通常为一个社交图标，点击后将会跳转到社交软件的个人主页
   social: [
     {
@@ -679,7 +719,8 @@ export const teekConfig = defineTeekConfig({
         <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License">
       </a>`,
     ],
-    customHtml: `<span id="runtime"></span>`, // 需要搭配 .vitepress/theme/helper/useRuntime.ts 使用
+    // 页脚信息，支持 HTML 格式（位于主题版权下方）
+    bottomMessage: [""],
     // 主题版权配置
     theme: {
       show: true, // 是否显示主题版权，建议显示
@@ -702,118 +743,11 @@ export const teekConfig = defineTeekConfig({
       name: "",
       link: "",
     },
+    customHtml: `<span id="runtime"></span>`, // 需要搭配 .vitepress/theme/helper/useRuntime.ts 使用
   },
-  articleBanner: {
-    enabled: true, // 是否启用单文章页 Banner
-    showCategory: true, // 是否展示分类
-    showTag: true, // 是否展示标签
-    defaultCoverImg: "", // 默认封面图
-    defaultCoverBgColor: "", // 默认封面背景色，优先级低于 defaultCoverImg
-  },
-  // 文章信息分析配置，分别作用在首页和文章页
-  articleAnalyze: {
-    showIcon: true, // 作者、日期、分类、标签、字数、阅读时长、浏览量等文章信息的图标是否显示
-    dateFormat: "yyyy-MM-dd hh:mm:ss", // 文章日期格式，首页和文章页解析日期时使用
-    dateUTC: true, // 是否使用 UTC 时间
-    showInfo: true, // 是否展示作者、日期、分类、标签、字数、阅读时长、浏览量等文章信息，分别作用于首页和文章页
-    showAuthor: true, // 是否展示作者
-    showCreateDate: true, // 是否展示创建日期
-    showUpdateDate: false, // 是否展示更新日期，仅在文章页显示
-    showCategory: false, // 是否展示分类
-    showTag: false, // 是否展示标签
-    // 将文章信息传送到指定位置，仅限在文章页生效，默认在文章页顶部
-    // teleport: {
-    //   selector: "h1",
-    //   position: "after",
-    //   className: "h1-bottom-info",
-    // },
-  },
-  // 面包屑配置
-  breadcrumb: {
-    enabled: true, // 是否启用面包屑
-    showCurrentName: false, // 面包屑最后一列是否显示当前文章的文件名
-    separator: "/", // 面包屑分隔符
-    homeLabel: "首页", // 鼠标悬停首页图标的提示文案
-  },
-  // 文章页的样式风格，default 为 VitePress 原生风格，card 为单卡片风格，segment 为片段卡片风格，card-nav 和 segment-nav 会额外修改导航栏样式。
-  pageStyle: "default",
-  // 赞赏功能配置
-  appreciation: {
-    position: "doc-after", // 赞赏位置
-    // 赞赏配置
-    options: {
-      icon: "weChatPay", // 赞赏图标，内置 weChatPay 和 alipay
-      expandTitle: "打赏支持", // 展开标题，支持 HTML
-      collapseTitle: "下次一定", // 折叠标题，支持 HTML
-      content: `<img src='/teek-logo-large.png'>`, // 赞赏内容，支持 HTML
-      expand: false, // 是否默认展开，默认 false
-    },
-  },
-  // 文章分享配置
-  articleShare: {
-    enabled: true, // 是否开启文章链接分享功能
-    text: "分享此页面", // 分享按钮文本
-    copiedText: "链接已复制", // 复制成功文本
-    query: false, // 是否包含查询参数
-    hash: false, // 是否包含哈希值
-  },
-  // 在每个文章页顶部显示 VitePress 容器添加提示，使用场景如超过半年的文章自动提示文章内容可能已过时
-  articleTopTip: (frontmatter, localeIndex, page) => {
-    const tip: Record<string, string> = {
-      type: "warning",
-      text: "文章发布较早，内容可能过时，阅读注意甄别。",
-    };
-
-    // 大于半年，添加提示
-    const longTime = 6 * 30 * 24 * 60 * 60 * 1000;
-    if (frontmatter.date && Date.now() - new Date(frontmatter.date).getTime() > longTime) return tip;
-  },
-  // 在每个文章页顶部显示 VitePress 容器添加提示，使用场景如添加文章版权声明。
-  articleBottomTip: frontmatter => {
-    if (typeof window === "undefined") return;
-
-    const hash = false;
-    const query = false;
-    const { origin, pathname, search } = window.location;
-    const url = `${origin}${frontmatter.permalink ?? pathname}${query ? search : ""}${hash ? location.hash : ""}`;
-    const author = "Teek";
-
-    return {
-      type: "tip",
-      // title: "声明", // 可选
-      text: `<p>作者：${author}</p>
-             <p style="margin-bottom: 0">链接：<a href="${decodeURIComponent(url)}" target="_blank">${decodeURIComponent(url)}</a></p>
-             <p>版权：此文章版权归 ${author} 所有，如有转载，请注明出处!</p>
-            `,
-    };
-  },
-  // 文章页底部的最近更新栏配置
-  articleUpdate: {
-    enabled: true, // 是否启用文章最近更新栏
-    limit: 3, // 文章最近更新栏显示数量
-  },
-  // 评论配置，目前内置 Giscus、Twikoo、Waline、Artalk 四种评论插件
-  comment: {
-    provider: "giscus", // 评论区提供者
-    // 评论区配置项，根据 provider 不同而不同，具体看对应官网的使用介绍
-    options: {
-      // twikoo 配置，官网：https://twikoo.js.org/
-      // envId: "your envId",
-
-      // waline 配置，官网：https://waline.js.org/
-      // serverURL: "your serverURL",
-      // jsLink: "https://unpkg.com/@waline/client@v3/dist/waline.js",
-      // cssLink: "https://unpkg.com/@waline/client@v3/dist/waline.css",
-
-      // giscus 配置，官网：https://giscus.app/zh-CN
-      repo: "your name/your repo",
-      repoId: "your repoId",
-      category: "your category",
-      categoryId: "your categoryId",
-
-      // artalk 配置，官网：https://artalk.js.org/
-      // server: "your server",
-      // site: "site",
+  markdown: {
+    demo: {
+      githubUrl: "https://github.com/fqzlr/vitepress-theme-teek/blob/master/docs",
     },
   },
   vitePlugins: {
@@ -842,12 +776,6 @@ export const teekConfig = defineTeekConfig({
       permalinkRules: [
         //{ folderName: "01.指南/01.简介/", prefix: "/$path/$uuid", removeLevel: 99 }, // 添加前缀
       ],
-    },
-  },
-  // Markdown 配置
-  markdown: {
-    demo: {
-      githubUrl: "https://github.com/fqzlr/vitepress-theme-teek/blob/master/docs",
     },
   },
 });

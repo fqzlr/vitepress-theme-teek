@@ -59,6 +59,7 @@ export default defineConfig({
       return [...items, ...permalinkItemBak];
     },
   },
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "https://q1.qlogo.cn/g?b=qq&nk=20447289&s=640",
