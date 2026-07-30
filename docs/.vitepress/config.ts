@@ -7,49 +7,28 @@ import { version } from "../../packages/teek/version";
 // Teek 在线主题包引用（需安装 Teek 在线版本）
 // import { version } from "vitepress-theme-teek/es/version";
 
-const description = [
-  "欢迎来到 vitepress-theme-teek 使用文档",
-  "Teek 是一个基于 VitePress 构建的主题，是在默认主题的基础上进行拓展，支持 VitePress 的所有功能、配置",
-  "Teek 拥有三种典型的知识管理形态：结构化、碎片化、体系化，可以轻松构建一个结构化知识库，适用个人博客、文档站、知识库等场景",
-].toString();
+const description = "fqzlr的个人技术博客，专注NAS分享、AI实践、学习笔记与技术总结，与个人成长分享。";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   extends: teekConfig,
-  title: "Vitepress Theme Teek",
+  title: "Fqzlr 的博客",
   description: description,
   cleanUrls: false,
   lastUpdated: true,
   lang: "zh-CN",
   head: [
-    ["link", { rel: "icon", type: "image/svg+xml", href: "/teek-logo-mini.svg" }],
-    ["link", { rel: "icon", type: "image/png", href: "/teek-logo-mini.png" }],
+    ["link", { rel: "icon", type: "image/svg+xml", href: "https://q1.qlogo.cn/g?b=qq&nk=20447289&s=640" }],
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:locale", content: "zh-CN" }],
-    ["meta", { property: "og:title", content: "Teek | Vitepress Theme Teek" }],
-    ["meta", { property: "og:site_name", content: "VitePress Theme Teek" }],
-    ["meta", { property: "og:image", content: "https://vp.teek.top/teek-logo-large.png" }],
-    ["meta", { property: "og:url", content: "https://vp.teek.top" }],
-    ["meta", { property: "og:description", description }],
-    ["meta", { name: "description", description }],
-    ["meta", { name: "author", content: "Teeker" }],
-    // 禁止浏览器缩放
-    // [
-    //   "meta",
-    //   {
-    //     name: "viewport",
-    //     content: "width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no",
-    //   },
-    // ],
-    ["meta", { name: "keywords", description }],
-    ["meta", { name: "baidu-site-verification", content: "codeva-GdK2q9MO1i" }], // 百度收录
-    ["meta", { name: "msvalidate.01", content: "48CABE70F538B8D117567176ABF325AF" }], // Bing 收录验证
-    ["script", { charset: "UTF-8", id: "LA_COLLECT", src: "//sdk.51.la/js-sdk-pro.min.js" }], // 51.la
-    [
-      "script",
-      {},
-      `typeof LA !== 'undefined' && LA.init({ id: "3LqfP8Icg0GeEvtn", ck: "3LqfP8Icg0GeEvtn", hashMode: true })`,
-    ], // 51.la
+    ["meta", { property: "og:title", content: "Fqzlr 的博客" }],
+    ["meta", { property: "og:site_name", content: "Fqzlr 的博客" }],
+    ["meta", { property: "og:image", content: "https://q1.qlogo.cn/g?b=qq&nk=20447289&s=640" }],
+    ["meta", { property: "og:url", content: "https://fqzlr.com" }],
+    ["meta", { property: "og:description", content: description }],
+    ["meta", { name: "description", content: description }],
+    ["meta", { name: "author", content: "Fqzlr" }],
+    ["meta", { name: "keywords", content: "fqzlr, JAVA, AI, Astro, ACGN, 博客, 技术博客, 静态博客" }],
   ],
   markdown: {
     // 开启行号
@@ -68,7 +47,7 @@ export default defineConfig({
     },
   },
   sitemap: {
-    hostname: "https://vp.teek.top",
+    hostname: "https://fqzlr.com",
     transformItems: items => {
       const permalinkItemBak: typeof items = [];
       // 使用永久链接生成 sitemap
@@ -82,7 +61,7 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: "/teek-logo-mini.svg",
+    logo: "https://q1.qlogo.cn/g?b=qq&nk=20447289&s=640",
     darkModeSwitchLabel: "主题",
     sidebarMenuLabel: "菜单",
     returnToTopLabel: "返回顶部",
@@ -133,6 +112,7 @@ export default defineConfig({
           { text: "标签页", link: "/tags" },
         ],
       },
+      { text: "博客", link: "/blog/", activeMatch: "/40.博客/" },
       { text: "✨ 赞赏", link: "/personal/" },
       {
         text: version,
@@ -142,7 +122,7 @@ export default defineConfig({
         ],
       },
     ],
-    socialLinks: [{ icon: "github", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/fqzlr" }],
     search: {
       provider: "algolia",
       options: {
@@ -153,7 +133,7 @@ export default defineConfig({
     },
     editLink: {
       text: "在 GitHub 上编辑此页",
-      pattern: "https://github.com/Kele-Bingtang/vitepress-theme-teek/edit/master/docs/:path",
+      pattern: "https://github.com/fqzlr/vitepress-theme-teek/edit/master/docs/:path",
     },
   },
   vite: {
