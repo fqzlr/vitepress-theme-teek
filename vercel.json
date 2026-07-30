@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run stub && pnpm run docs:build",
+  "outputDirectory": "docs/.vitepress/dist",
   "headers": [
     {
       "source": "/assets/(.*)",
