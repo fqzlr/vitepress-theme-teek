@@ -165,22 +165,7 @@ export const teekConfig = defineTeekConfig({
     name: "fqzlr", // Banner 标题，默认读取 vitepress 的 title 属性
     bgStyle: "fullImg", // Banner 背景风格：pure 为纯色背景，partImg 为局部图片背景，fullImg 为全屏图片背景
     pureBgColor: "#28282d", // Banner 背景色，bgStyle 为 pure 时生效
-    imgSrc: [
-      "/blog/bj9.jpg",
-      "/blog/bj1.jpg",
-      "/blog/bj2.jpg",
-      "/blog/bj3.jpg",
-      "/blog/bj4.jpg",
-      "/blog/bj5.jpg",
-      "/blog/bj6.jpg",
-      "/blog/bj7.jpg",
-      "/blog/bj8.jpg",
-      "/blog/bj10.jpg",
-      "/blog/bj11.jpg",
-      "/blog/bj12.jpg",
-      "/blog/bj13.jpg",
-      "/blog/bj14.jpg",
-    ], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
+    imgSrc: ["/blog/bj6.jpg", "/blog/bj7.jpg"], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
     imgInterval: 15000, // 当多张图片时（imgSrc 为数组），设置切换时间，单位：毫秒
     imgShuffle: false, // 图片是否随机切换，为 false 时按顺序切换，bgStyle 为 partImg 或 fullImg 时生效
     imgWaves: true, // 是否开启 Banner 图片波浪纹，bgStyle 为 fullImg 时生效
@@ -253,7 +238,7 @@ export const teekConfig = defineTeekConfig({
     slogan: "躬身入局，心为主理，行有尺度，自持本心.", // 博主签名
     avatar: "https://q1.qlogo.cn/g?b=qq&nk=20447289&s=640", // 博主头像
     shape: "circle-rotate", // 头像风格：square 为方形头像，circle 为圆形头像，circle-rotate 可支持鼠标悬停旋转，circle-rotate-last 将会持续旋转 59s
-    circleBgImg: "/blog/bj9.jpg", // 背景图片
+    circleBgImg: "/blog/bg4.jpg", // 背景图片
     circleBgMask: true, // 遮罩层是否显示，仅当 shape 为 circle 且 circleBgImg 配置时有效
     circleSize: 120, // 头像大小
     color: "#ffffff", // 字体颜色
