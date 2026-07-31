@@ -111,11 +111,12 @@ const storageKey = computed(() => ns.storageKey("notice", localeIndex.value, isC
 
 if (noticeConfig.value.useStorage) {
   // 多语言切换后，读取新语言的缓存，更新公告弹框状态
+  // SSR 阶段不访问 localStorage（immediate + onMounted 都会触发，组件已挂载说明 isClient 为 true）
   watch(
     localeIndex,
     () => {
       // 二次校验，因为 noticeConfig 是 computed，因此后面可能会变化
-      if (!noticeConfig.value.useStorage) return;
+      if (!isClient || !noticeConfig.value.useStorage) return;
 
       const oldValue = localStorage.getItem(storageKey.value);
       if (oldValue) {
