@@ -9,7 +9,7 @@ import { version } from "../../packages/teek/version";
 export const teekConfig = defineTeekConfig({
   teekTheme: true, // 是否启用 Teek 主题
   teekHome: true, // 是否启用 Teek 的首页风格（博客风格），如果为 false，则还原到 VitePress 的默认首页
-  vpHome: true, // 是否启用 VitePress 首页风格，支持 teekHome 和 vpHome 同时存在
+  vpHome: false, // 是否启用 VitePress 首页风格，支持 teekHome 和 vpHome 同时存在
   loading: false, // 页面加载 Loading 动画配置，如果为 boolean，则控制是否启用，如果为字符串，则指定加载 Loading 动画的文案
   homeCardListPosition: "left", // 首页卡片栏列表位置，当为 left 则在文章列表左侧，当为 right 则在文章列表右侧
   sidebarTrigger: true, // 是否启用侧边栏展开/折叠触发器，点击触发器可以展开/折叠侧边栏。
@@ -151,7 +151,7 @@ export const teekConfig = defineTeekConfig({
     name: "Teek", // Banner 标题，默认读取 vitepress 的 title 属性
     bgStyle: "fullImg", // Banner 背景风格：pure 为纯色背景，partImg 为局部图片背景，fullImg 为全屏图片背景
     pureBgColor: "#28282d", // Banner 背景色，bgStyle 为 pure 时生效
-    imgSrc: ["/blog/bj13.jpg", "/blog/bj11.jpg"], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
+    imgSrc: ["/blog/bj7.jpg", "/blog/bj11.jpg"], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
     imgInterval: 15000, // 当多张图片时（imgSrc 为数组），设置切换时间，单位：毫秒
     imgShuffle: false, // 图片是否随机切换，为 false 时按顺序切换，bgStyle 为 partImg 或 fullImg 时生效
     imgWaves: true, // 是否开启 Banner 图片波浪纹，bgStyle 为 fullImg 时生效

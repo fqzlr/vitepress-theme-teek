@@ -197,6 +197,14 @@ export const useAllPosts = (): PostData => {
   const { theme } = useData();
   const posts = theme.value.posts;
 
+  // 临时调试：浏览器/SSR 端都打印
+  console.log("[DEBUG useAllPosts]", {
+    hasTheme: !!theme.value,
+    hasPosts: !!posts,
+    postsKeys: posts ? Object.keys(posts) : null,
+    allPostsLen: posts?.allPosts?.length,
+  });
+
   return posts || emptyPost;
 };
 
