@@ -44,14 +44,14 @@ export const teekConfig = defineTeekConfig({
   },
   windowTransition: true, // 是否全局给部分元素启用视图渐入过渡效果，当为 boolean 类型，则控制全局是否启用，当为 object 类型，则控制部分元素是否启用
   // body 背景图片配置，将整个网站的背景色改为图片。
-  // bodyBgImg: {
-  //   imgSrc: ["/blog/bj6.jpg"], // body 背景图片链接。单张图片 string | 多张图片 string[], 多张图片时每隔 imgInterval 秒换一张
-  //   imgOpacity: 1, // body 背景图透明度，选值 0.1 ~ 1.0
-  //   imgInterval: 15000, //  body 当多张背景图时（imgSrc 为数组），设置切换时间，单位：毫秒
-  //   imgShuffle: false, // body 背景图是否随机切换，为 false 时按顺序切换
-  //   mask: true, // body 背景图遮罩
-  //   maskBg: "rgba(0, 0, 0, 0.2)", // body 背景图遮罩颜色，如果为数字，则是 rgba(0, 0, 0, ${maskBg})，如果为字符串，则作为背景色。mask 为 true 时生效
-  // },
+  bodyBgImg: {
+    imgSrc: ["/blog/bj6.jpg"], // body 背景图片链接。单张图片 string | 多张图片 string[], 多张图片时每隔 imgInterval 秒换一张
+    imgOpacity: 1, // body 背景图透明度，选值 0.1 ~ 1.0
+    imgInterval: 15000, //  body 当多张背景图时（imgSrc 为数组），设置切换时间，单位：毫秒
+    imgShuffle: false, // body 背景图是否随机切换，为 false 时按顺序切换
+    mask: true, // body 背景图遮罩
+    maskBg: "rgba(0, 0, 0, 0.2)", // body 背景图遮罩颜色，如果为数字，则是 rgba(0, 0, 0, ${maskBg})，如果为字符串，则作为背景色。mask 为 true 时生效
+  },
   // 主题增强配置，当开启后，右上角将有主题增强面板出现。
   themeEnhance: {
     enabled: true, // 启用主题增强功能
@@ -162,8 +162,8 @@ export const teekConfig = defineTeekConfig({
   // 首页 Banner 配置，位于首页顶部
   banner: {
     enabled: true, // 是否启用 Banner
-    name: "fqzlr", // Banner 标题，默认读取 vitepress 的 title 属性
-    bgStyle: "fullImg", // Banner 背景风格：pure 为纯色背景，partImg 为局部图片背景，fullImg 为全屏图片背景
+    name: "Teek", // Banner 标题，默认读取 vitepress 的 title 属性
+    bgStyle: "partImg", // Banner 背景风格：pure 为纯色背景，partImg 为局部图片背景，fullImg 为全屏图片背景
     pureBgColor: "#28282d", // Banner 背景色，bgStyle 为 pure 时生效
     imgSrc: ["/blog/bj6.jpg", "/blog/bj7.jpg"], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
     imgInterval: 15000, // 当多张图片时（imgSrc 为数组），设置切换时间，单位：毫秒
