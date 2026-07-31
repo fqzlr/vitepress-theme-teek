@@ -51,19 +51,7 @@ watchEffect(() => {
 });
 
 const updateData = () => {
-  const postConst = posts.value;
-  const frontmatterConst = frontmatter.value;
-  let post = postConst.sortPostsByDateAndSticky;
-
-  if (!isClient) {
-    // SSR 阶段：填充默认占位，避免构建出来的 HTML <ul> 为空
-    // 客户端 hydrate 时会重新跑一次完整逻辑（含分页、分类、标签过滤）
-    const inHomePosts = (post || []).filter(item => item.frontmatter.inHomePost !== false);
-    if (total.value !== post?.length) total.value = post?.length || 0;
-    totalPostsCount.value = inHomePosts.length;
-    currentPosts.value = inHomePosts.slice(0, defaultPageSize.value);
-    return;
-  }
+  if (!isClient) return;
 
   // 分页处理，如果 URL 查询参数存在 pageNum，则加载对应的 post
   const { searchParams } = new URL(window.location.href);
@@ -71,6 +59,10 @@ const updateData = () => {
   if (p !== pageNum.value) pageNum.value = p;
   // 大于 1 代表开始分页
   isPaging.value = p > 1;
+
+  const postConst = posts.value;
+  const frontmatterConst = frontmatter.value;
+  let post = postConst.sortPostsByDateAndSticky;
 
   if (frontmatterConst.categoriesPage) {
     // 在分类页时，如果 URL 查询参数存在 category，则加载该 category 的 post，不存在则加载所有 post
