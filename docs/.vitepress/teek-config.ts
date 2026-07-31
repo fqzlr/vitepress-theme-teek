@@ -45,7 +45,7 @@ export const teekConfig = defineTeekConfig({
   windowTransition: true, // 是否全局给部分元素启用视图渐入过渡效果，当为 boolean 类型，则控制全局是否启用，当为 object 类型，则控制部分元素是否启用
   // body 背景图片配置，将整个网站的背景色改为图片。
   bodyBgImg: {
-    imgSrc: ["/blog/bj6.jpg"], // body 背景图片链接。单张图片 string | 多张图片 string[], 多张图片时每隔 imgInterval 秒换一张
+    imgSrc: ["/blog/bg (1).jpg"], // body 背景图片链接。单张图片 string | 多张图片 string[], 多张图片时每隔 imgInterval 秒换一张
     imgOpacity: 1, // body 背景图透明度，选值 0.1 ~ 1.0
     imgInterval: 15000, //  body 当多张背景图时（imgSrc 为数组），设置切换时间，单位：毫秒
     imgShuffle: false, // body 背景图是否随机切换，为 false 时按顺序切换
@@ -145,27 +145,13 @@ export const teekConfig = defineTeekConfig({
       options: { id: "4f4d87b0-bf0f-403a-a7c1-71962537673a", src: "https://umami.fqzlr.com/script.js" },
     },
   ],
-  // 风险链接提示配置，拦截外部链接并跳转到风险提示页面
-  riskLink: {
-    enabled: true, // 是否启用风险链接提示功能
-    // 白名单，支持正则表达式，匹配的链接不拦截
-    whitelist: [
-      "https://github.com",
-      "https://gitee.com",
-      "https://vitepress.dev",
-      /\.fqzlr\.com$/, // fqzlr.com 及其子域名
-      /\.fqzlr\.top$/, // fqzlr.top 及其子域名
-    ],
-    // 黑名单，支持正则表达式，如果设置了黑名单，则只拦截黑名单的链接
-    blacklist: [],
-  },
   // 首页 Banner 配置，位于首页顶部
   banner: {
     enabled: true, // 是否启用 Banner
     name: "Teek", // Banner 标题，默认读取 vitepress 的 title 属性
-    bgStyle: "partImg", // Banner 背景风格：pure 为纯色背景，partImg 为局部图片背景，fullImg 为全屏图片背景
+    bgStyle: "fullImg", // Banner 背景风格：pure 为纯色背景，partImg 为局部图片背景，fullImg 为全屏图片背景
     pureBgColor: "#28282d", // Banner 背景色，bgStyle 为 pure 时生效
-    imgSrc: ["/blog/bj6.jpg", "/blog/bj7.jpg"], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
+    imgSrc: ["/blog/bg(1).jpg", "/blog/bg2.webp"], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
     imgInterval: 15000, // 当多张图片时（imgSrc 为数组），设置切换时间，单位：毫秒
     imgShuffle: false, // 图片是否随机切换，为 false 时按顺序切换，bgStyle 为 partImg 或 fullImg 时生效
     imgWaves: true, // 是否开启 Banner 图片波浪纹，bgStyle 为 fullImg 时生效
@@ -191,7 +177,7 @@ export const teekConfig = defineTeekConfig({
   },
   // 壁纸模式，在首页 最顶部 进入全屏后开启，仅当 banner.bgStyle = 'fullImg' 或 bodyBgImg.imgSrc 存在才生效。
   wallpaper: {
-    enabled: true, // 是否启用壁纸模式
+    enabled: false, // 是否启用壁纸模式
     hideBanner: false, // 开启壁纸模式后，是否隐藏 Banner
     hideMask: true, // 开启壁纸模式后，是否隐藏 Banner 或 bodyBgImage 的遮罩层，则确保 banner.mask 和 bodyBgImage.mask 为 true 才生效
   },
@@ -238,7 +224,7 @@ export const teekConfig = defineTeekConfig({
     slogan: "躬身入局，心为主理，行有尺度，自持本心.", // 博主签名
     avatar: "https://q1.qlogo.cn/g?b=qq&nk=20447289&s=640", // 博主头像
     shape: "circle-rotate", // 头像风格：square 为方形头像，circle 为圆形头像，circle-rotate 可支持鼠标悬停旋转，circle-rotate-last 将会持续旋转 59s
-    circleBgImg: "/blog/bg4.jpg", // 背景图片
+    circleBgImg: "/blog/bg4.webp", // 背景图片
     circleBgMask: true, // 遮罩层是否显示，仅当 shape 为 circle 且 circleBgImg 配置时有效
     circleSize: 120, // 头像大小
     color: "#ffffff", // 字体颜色
@@ -744,7 +730,7 @@ export const teekConfig = defineTeekConfig({
     // 博客版权配置
     copyright: {
       show: true, // 是否显示博客版权
-      createYear: 2026, // 创建年份
+      createYear: 2025, // 创建年份
       suffix: "Fqzlr", // 后缀
     },
     // ICP 备案信息配置

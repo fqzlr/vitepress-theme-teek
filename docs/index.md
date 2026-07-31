@@ -2,7 +2,7 @@
 layout: home
 
 tk:
-  teekHome: true
+  teekHome: false
 
 hero:
   name: Fqzlr
