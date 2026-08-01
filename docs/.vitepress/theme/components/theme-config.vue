@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Post, TeekConfig, SegmentedOption } from "vitepress-theme-teek";
+import type { Post, TeekConfig, SegmentedOption } from "../../../../packages/teek";
 import { useData } from "vitepress";
 import { ref } from "vue";
-import { TkSegmented, TkSwitch, TkMessage, useClipboard } from "vitepress-theme-teek";
+import { TkSegmented, TkSwitch, TkMessage, useClipboard } from "../../../../packages/teek";
 
 interface ThemeEnhanceConfig {
   modelValue: any;

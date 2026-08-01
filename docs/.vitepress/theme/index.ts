@@ -1,4 +1,4 @@
-import Teek from "vitepress-theme-teek";
+import Teek from "../../../packages/teek";
 import TeekLayoutProvider from "./components/teek-layout-provider.vue";
 
 // Teek 本地主题包引用（与 Teek 在线主题包引用 二选一）

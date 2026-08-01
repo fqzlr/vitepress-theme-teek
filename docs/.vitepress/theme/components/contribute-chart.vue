@@ -2,7 +2,7 @@
 import * as echarts from "echarts";
 import { ref, watch, nextTick, computed, useTemplateRef, onMounted } from "vue";
 import { useData } from "vitepress";
-import { formatDate, usePosts, useIntersectionObserver } from "vitepress-theme-teek";
+import { formatDate, usePosts, useIntersectionObserver } from "../../../../packages/teek";
 
 const { isDark } = useData();
 const posts = usePosts();

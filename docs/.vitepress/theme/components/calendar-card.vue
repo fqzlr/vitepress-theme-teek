@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { TkPageCard } from "vitepress-theme-teek";
+import { TkPageCard } from "../../../../packages/teek";
 import { ref, onMounted, computed } from "vue";
 
 // 星期几中文映射

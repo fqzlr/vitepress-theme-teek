@@ -1,6 +1,6 @@
 <script setup lang="ts" name="TeekLayoutProvider">
-import type { TeekConfig } from "vitepress-theme-teek";
-import Teek, { teekConfigContext, clockIcon, TkMessage } from "vitepress-theme-teek";
+import type { TeekConfig } from "../../../../packages/teek";
+import Teek, { teekConfigContext, clockIcon, TkMessage } from "../../../../packages/teek";
 import { useData } from "vitepress";
 import { watch, nextTick, ref, provide } from "vue";
 import { useRibbon } from "../composables/use-ribbon";

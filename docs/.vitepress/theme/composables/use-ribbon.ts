@@ -1,4 +1,4 @@
-import { isClient, useMounted, useScopeDispose } from "vitepress-theme-teek";
+import { isClient, useMounted, useScopeDispose } from "../../../../packages/teek";
 
 interface UseRibbonOptions {
   /**

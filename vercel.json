@@ -1,5 +1,5 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "installCommand": "pnpm install",
   "buildCommand": "pnpm run stub && pnpm run docs:build",
   "outputDirectory": "docs/.vitepress/dist",

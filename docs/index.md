@@ -1,9 +1,6 @@
 ---
 layout: home
 
-tk:
-  teekHome: true
-
 hero:
   name: Fqzlr
   text: 个人博客
