@@ -30,20 +30,3 @@ features:
     title: 个人成长
     details: 分享个人成长路上的思考、感悟与经验，与君共勉。
 ---
-
-## 关于本站
-
-这里是我的个人技术博客，专注 **NAS 分享**、**AI 实践**、**学习笔记** 与 **技术总结**。
-
-在这里，你会看到：
-
-- 🖥️ NAS 搭建与使用的实践经验
-- 🤖 AI 工具与模型的应用探索
-- 📝 技术学习过程中的笔记与总结
-- 🌱 个人成长路上的思考与感悟
-
-## 💡 联系我
-
-- **GitHub**: [fqzlr](https://github.com/fqzlr)
-- **Email**: [fqzlr@outlook.com](mailto:fqzlr@outlook.com)
-- **博客**: [Fqzlr 的博客](https://fqzlr.com/)

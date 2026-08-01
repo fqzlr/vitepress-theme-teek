@@ -148,7 +148,7 @@ export const teekConfig = defineTeekConfig({
   // 首页 Banner 配置，位于首页顶部
   banner: {
     enabled: true, // 是否启用 Banner
-    name: "Teek", // Banner 标题，默认读取 vitepress 的 title 属性
+    name: "fqzlrの笔记本", // Banner 标题，默认读取 vitepress 的 title 属性
     bgStyle: "fullImg", // Banner 背景风格：pure 为纯色背景，partImg 为局部图片背景，fullImg 为全屏图片背景
     pureBgColor: "#28282d", // Banner 背景色，bgStyle 为 pure 时生效
     imgSrc: ["/blog/bj7.jpg", "/blog/bj11.jpg"], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
@@ -188,7 +188,7 @@ export const teekConfig = defineTeekConfig({
     showMore: true, // 是否显示更多按钮
     moreLabel: "阅读全文 >", // 更多按钮文字
     emptyLabel: "暂无文章", // 文章列表为空时的标签
-    coverImgMode: "small", // 文章封面图模式
+    coverImgMode: "full", // 文章封面图模式
     showCapture: true, // 是否在摘要位置显示文章部分文字，当为 true 且不使用 frontmatter.describe 和 <!-- more --> 时，会自动截取前 300 个字符作为摘要
     splitSeparator: false, // 文章信息（作者、创建时间、分类、标签等信息）是否添加 | 分隔符
     transition: true, // 是否开启过渡动画
@@ -238,7 +238,7 @@ export const teekConfig = defineTeekConfig({
   // 精选文章卡片配置
   topArticle: {
     enabled: true, // 是否启用精选文章卡片
-    title: "${icon}精选文章", // 卡片标题
+    title: icon => icon + "精选文章", // 卡片标题，支持函数形式注入图标
     emptyLabel: "暂无精选文章", // 精选文章为空时的标签
     limit: 5, // 一页显示的数量
     autoPage: false, // 是否自动翻页
@@ -250,8 +250,8 @@ export const teekConfig = defineTeekConfig({
   category: {
     enabled: true, // 是否启用分类卡片
     path: "/categories", // 分类页访问地址
-    pageTitle: "${icon}全部分类", // 分类页卡片标题
-    homeTitle: "${icon}文章分类", // 卡片标题
+    pageTitle: icon => icon + "全部分类", // 分类页卡片标题
+    homeTitle: icon => icon + "文章分类", // 卡片标题
     moreLabel: "更多 ...", // 查看更多分类标签
     emptyLabel: "暂无文章分类", // 分类为空时的标签
     limit: 5, // 一页显示的数量
@@ -262,8 +262,8 @@ export const teekConfig = defineTeekConfig({
   tag: {
     enabled: true, // 是否启用标签卡片
     path: "/tags", // 标签页访问地址
-    pageTitle: "${icon}全部标签", // 标签页页卡片标题
-    homeTitle: "${icon}热门标签", // 卡片标题
+    pageTitle: icon => icon + "全部标签", // 标签页页卡片标题
+    homeTitle: icon => icon + "热门标签", // 卡片标题
     moreLabel: "更多 ...", //  查看更多分类标签
     emptyLabel: "暂无标签", // 标签为空时的标签
     limit: 21, // 一页显示的数量
@@ -661,7 +661,7 @@ export const teekConfig = defineTeekConfig({
         link: "https://474029.xyz/",
       },
     ], // 友情链接数据列表
-    title: "${icon}友情链接", // 卡片标题
+    title: icon => icon + "友情链接", // 卡片标题
     emptyLabel: "暂无友情链接", // 友情链接为空时的标签
     limit: 5, // 一页显示的数量
     autoScroll: true, // 是否自动滚动
@@ -676,24 +676,49 @@ export const teekConfig = defineTeekConfig({
       name: "GitHub",
       link: "https://github.com/fqzlr",
     },
+    {
+      icon: "icon-gitee",
+      name: "Gitee",
+      link: "https://gitee.com/fqzlr",
+    },
+    {
+      icon: "icon-QQ",
+      name: "QQ",
+      link: "https://qm.qq.com/q/20447289",
+    },
+    {
+      icon: "icon-youjian",
+      name: "Email",
+      link: "mailto:contact@fqzlr.com",
+    },
+    {
+      icon: "icon-rss",
+      name: "博客",
+      link: "https://fqzlr.com/",
+    },
+    {
+      icon: "icon-yuque",
+      name: "主页",
+      link: "https://home.fqzlr.com/",
+    },
   ],
   // 页脚信息组配置
-  footerGroup: [
-    {
-      title: "相关链接",
-      links: [
-        { name: "Fqzlr 博客", link: "https://fqzlr.com/" },
-        { name: "GitHub", link: "https://github.com/fqzlr" },
-      ],
-    },
-    {
-      title: "站点导航",
-      links: [
-        { name: "首页", link: "/" },
-        { name: "博客", link: "/blog/" },
-      ],
-    },
-  ],
+  // footerGroup: [
+  //   {
+  //     title: "相关链接",
+  //     links: [
+  //       { name: "Fqzlr 博客", link: "https://fqzlr.com/" },
+  //       { name: "GitHub", link: "https://github.com/fqzlr" },
+  //     ],
+  //   },
+  //   {
+  //     title: "站点导航",
+  //     links: [
+  //       { name: "首页", link: "/" },
+  //       { name: "博客", link: "/blog/" },
+  //     ],
+  //   },
+  // ],
   // 页脚配置
   footerInfo: {
     // 页脚信息，支持 HTML 格式（位于主题版权上方）
