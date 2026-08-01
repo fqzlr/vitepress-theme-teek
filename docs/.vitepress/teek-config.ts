@@ -9,7 +9,7 @@ import { version } from "../../packages/teek/version";
 export const teekConfig = defineTeekConfig({
   teekTheme: true, // 是否启用 Teek 主题
   teekHome: true, // 是否启用 Teek 的首页风格（博客风格），如果为 false，则还原到 VitePress 的默认首页
-  vpHome: false, // 是否启用 VitePress 首页风格，支持 teekHome 和 vpHome 同时存在
+  vpHome: true, // 是否启用 VitePress 首页风格，支持 teekHome 和 vpHome 同时存在
   loading: false, // 页面加载 Loading 动画配置，如果为 boolean，则控制是否启用，如果为字符串，则指定加载 Loading 动画的文案
   homeCardListPosition: "left", // 首页卡片栏列表位置，当为 left 则在文章列表左侧，当为 right 则在文章列表右侧
   sidebarTrigger: true, // 是否启用侧边栏展开/折叠触发器，点击触发器可以展开/折叠侧边栏。
@@ -138,8 +138,8 @@ export const teekConfig = defineTeekConfig({
   },
   // 站点分析配置
   siteAnalytics: [
-    { provider: "google", options: { id: "******" } },
-    { provider: "baidu", options: { id: "******" } },
+    // { provider: "google", options: { id: "G-XXXXXXXXXX" } },  // 替换为真实的 Google Analytics ID
+    // { provider: "baidu", options: { id: "xxxxxxxxxx" } },     // 替换为真实的百度统计 ID
     {
       provider: "umami",
       options: { id: "4f4d87b0-bf0f-403a-a7c1-71962537673a", src: "https://umami.fqzlr.com/script.js" },
