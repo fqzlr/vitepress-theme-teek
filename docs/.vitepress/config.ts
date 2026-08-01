@@ -14,7 +14,7 @@ export default defineConfig({
   extends: teekConfig,
   title: "Fqzlr 的博客",
   description: description,
-  cleanUrls: true,
+  cleanUrls: false,
   lastUpdated: true,
   lang: "zh-CN",
   head: [
